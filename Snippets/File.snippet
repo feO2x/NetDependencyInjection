@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>File Class</Title>
+      <Shortcut>File</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TestMethodName</ID>
+          <Default>TestMethodName</Default>
+          <ToolTip>Enter name of test method here.</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[public static class File
+    {
+        private static StreamWriter _streamWriter;
+
+        public static void Initialize()
+        {
+            _streamWriter = new StreamWriter(new FileStream("text.txt", FileMode.Create));
+        }
+
+        public static void Write(char character)
+        {
+            _streamWriter.Write(character);
+        }
+
+        public static void Dispose()
+        {
+            _streamWriter?.Dispose();
+            _streamWriter = null;
+        }
+    }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

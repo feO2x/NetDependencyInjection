@@ -7,6 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Reasons for DI", "1 Reaso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhyDependencyInjection", "WhyDependencyInjection\WhyDependencyInjection.csproj", "{40DAEA31-B877-4F65-9E75-6D8A3B43AB2C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeSnippets", "CodeSnippets", "{2D69D23B-FA64-4981-878D-225E8575213F}"
+	ProjectSection(SolutionItems) = preProject
+		Snippets\File.snippet = Snippets\File.snippet
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
