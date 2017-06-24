@@ -21,9 +21,9 @@
     {
         private static StreamWriter _streamWriter;
 
-        public static void Initialize()
+        public static void Initialize(string path)
         {
-            _streamWriter = new StreamWriter(new FileStream("text.txt", FileMode.Create));
+            _streamWriter = new StreamWriter(new FileStream(path, FileMode.Create));
         }
 
         public static void Write(char character)
