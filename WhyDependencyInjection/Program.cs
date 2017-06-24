@@ -5,12 +5,17 @@ namespace WhyDependencyInjection
     {
         public static void Main()
         {
-            Copy();
-        }
+            // Register
+            var reader = new ConsoleReader();
+            //var writer = new ConsoleWriter();
+            var writer = new FileWriter("text.txt");
+            var copyProcess = new CopyProcess(reader, writer);
 
-        private static void Copy()
-        {
-            
+            // Resolve
+            copyProcess.Copy();
+
+            // Release
+            writer.Dispose();
         }
     }
 }
