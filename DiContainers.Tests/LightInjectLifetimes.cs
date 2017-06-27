@@ -6,7 +6,7 @@ using Xunit;
 
 namespace DiContainers.Tests
 {
-    public class LightInjectLifetimes
+    public sealed class LightInjectLifetimes
     {
         [Fact]
         public void SingletonLifetime()
