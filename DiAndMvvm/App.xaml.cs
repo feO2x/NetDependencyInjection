@@ -12,19 +12,21 @@ namespace DiAndMvvm
         {
             _container = new ServiceContainer();
 
-            _container.Register<MainWindow>(new PerContainerLifetime())
-                      .Register(c => new MainWindowViewModel(c), new PerContainerLifetime())
-                      .Register<INavigationService>(c => c.GetInstance<MainWindowViewModel>())
+            _container.Register<NavigationShellView>(new PerContainerLifetime())
+                      .Register(c => new NavigationShellViewModel(c), new PerContainerLifetime())
+                      .Register<INavigationService>(c => c.GetInstance<NavigationShellViewModel>())
                       .Register<MainMenuView>()
                       .Register<MainMenuViewModel>()
-                      .Register<ContactsMasterDetailView>();
+                      .Register<ContactsMasterDetailView>()
+                      .Register<ContactsMasterDetailViewModel>()
+                      .Register<IContactRepository, InMemoryContactRepository>(new PerContainerLifetime());
         }
 
         protected override async void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            MainWindow = _container.GetInstance<MainWindow>();
+            MainWindow = _container.GetInstance<NavigationShellView>();
             MainWindow.Show();
             await Task.Delay(500);
             var navigationService = _container.GetInstance<INavigationService>();

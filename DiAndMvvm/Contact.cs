@@ -23,6 +23,7 @@ namespace DiAndMvvm
             set => _lastName = value.MustNotBeNullOrWhiteSpace();
         }
 
+        public string FullName => $"{FirstName} {LastName}";
         public DateTime? BirthDate
         {
             get => _birthDate;

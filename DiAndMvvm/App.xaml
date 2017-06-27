@@ -26,6 +26,21 @@
                 <Setter Property="Height" Value="200" />
                 <Setter Property="TiltFactor" Value="2" />
             </Style>
+            <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Segoe UI Light" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            
+            <Style x:Key="LabelStyle" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="Margin" Value="20 5 10 5" />
+            </Style>
+
+            <Style x:Key="ValueStyle" TargetType="TextBlock">
+                <Setter Property="Margin" Value="20 5 10 5" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

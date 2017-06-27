@@ -3,12 +3,12 @@ using LightInject;
 
 namespace DiAndMvvm
 {
-    public sealed class MainWindowViewModel : BaseNotifyPropertyChanged, INavigationService
+    public sealed class NavigationShellViewModel : BaseNotifyPropertyChanged, INavigationService
     {
         private readonly IServiceFactory _container;
         private object _currentView;
 
-        public MainWindowViewModel(IServiceFactory container)
+        public NavigationShellViewModel(IServiceFactory container)
         {
             _container = container.MustNotBeNull();
         }

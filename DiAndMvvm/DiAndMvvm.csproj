@@ -73,6 +73,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DelegateCommand.cs" />
+    <Compile Include="IContactRepository.cs" />
+    <Compile Include="InMemoryContactRepository.cs" />
     <Compile Include="MainMenuViewModel.cs" />
     <Compile Include="RaisePropertyChangedExtensions.cs" />
     <Page Include="ContactsMasterDetailView.xaml">
@@ -83,7 +85,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="NavigationShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -102,13 +104,13 @@
     <Compile Include="MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="NavigationShellView.xaml.cs">
+      <DependentUpon>NavigationShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="NavigationShellViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

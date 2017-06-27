@@ -2,14 +2,14 @@
 
 namespace DiAndMvvm
 {
-    public partial class MainWindow
+    public partial class NavigationShellView
     {
-        public MainWindow()
+        public NavigationShellView()
         {
             InitializeComponent();
         }
 
-        public MainWindow(MainWindowViewModel viewModel) : this()
+        public NavigationShellView(NavigationShellViewModel viewModel) : this()
         {
             DataContext = viewModel.MustNotBeNull();
         }

@@ -1,12 +1,76 @@
 ﻿<UserControl x:Class="DiAndMvvm.ContactsMasterDetailView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:DiAndMvvm"
-             mc:Ignorable="d" 
+             xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d"
              d:DesignHeight="800" d:DesignWidth="1280">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Style="{StaticResource MetroCircleButtonStyle}" Width="60" Height="60" Margin="20 0 20 0" Command="{Binding NavigateBackCommand}">
+                <TextBlock Style="{StaticResource IconTextBlock}" Text="&#xE72B;" FontSize="20" />
+            </Button>
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="{Binding Title}" />
+        </StackPanel>
+
+        <ListBox Grid.Row="1" Grid.Column="0" Margin="0 10" ItemsSource="{Binding Contacts, Mode=OneWay}" SelectedItem="{Binding SelectedContact, Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="local:Contact">
+                    <Grid Height="80">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource IconTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Text="&#xE77B;" />
+                        <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding FirstName}" />
+                            <TextBlock Text="{Binding LastName}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <mahapps:TransitioningContentControl Margin="20 10" Grid.Row="1" Grid.Column="1" Content="{Binding SelectedContact, Mode=OneWay}">
+            <mahapps:TransitioningContentControl.ContentTemplate>
+                <DataTemplate DataType="local:Contact">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding FullName}" Grid.ColumnSpan="2" Style="{StaticResource HeaderTextBlockStyle}" />
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Birth date:" Style="{StaticResource LabelStyle}" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BirthDate}" Style="{StaticResource ValueStyle}" />
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Email:" Style="{StaticResource LabelStyle}" />
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Email}" Style="{StaticResource ValueStyle}" />
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Phone:" Style="{StaticResource LabelStyle}" />
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Phone}" Style="{StaticResource ValueStyle}" />
+
+                    </Grid>
+                </DataTemplate>
+            </mahapps:TransitioningContentControl.ContentTemplate>
+        </mahapps:TransitioningContentControl>
     </Grid>
 </UserControl>
