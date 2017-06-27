@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Light.ChangeNotifications, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b7fc0a375152f98f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Light.ChangeNotifications.1.0.0\lib\portable-net45+netcore45+wpa81+wp8\Light.ChangeNotifications.dll</HintPath>
-    </Reference>
     <Reference Include="Light.GuardClauses, Version=2.0.0.0, Culture=neutral, PublicKeyToken=573727035c45e5b3, processorArchitecture=MSIL">
       <HintPath>..\packages\Light.GuardClauses.2.0.0\lib\netstandard1.0\Light.GuardClauses.dll</HintPath>
     </Reference>
@@ -75,7 +72,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ContactsMasterDetail.xaml">
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="MainMenuViewModel.cs" />
+    <Compile Include="RaisePropertyChangedExtensions.cs" />
+    <Page Include="ContactsMasterDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,11 +91,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BaseNotifyPropertyChanged.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="ContactsMasterDetail.xaml.cs">
-      <DependentUpon>ContactsMasterDetail.xaml</DependentUpon>
+    <Compile Include="ContactsMasterDetailView.xaml.cs">
+      <DependentUpon>ContactsMasterDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContactsMasterDetailViewModel.cs" />
+    <Compile Include="INavigationService.cs" />
+    <Compile Include="IRaisePropertyChanged.cs" />
+    <Compile Include="MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

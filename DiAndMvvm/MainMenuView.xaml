@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="DiAndMvvm.MainMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1280">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <mahapps:Tile Style="{StaticResource TileStyle}" Title="Navigate To Contacts" Command="{Binding NavigateToContactsCommand}">
+                <TextBlock Style="{StaticResource IconTextBlock}" Text="&#xE716;" />
+            </mahapps:Tile>
+        </StackPanel>
+    </Grid>
+</UserControl>

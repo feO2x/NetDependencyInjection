@@ -5,6 +5,6 @@
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
                      mc:Ignorable="d"
-                     Title="{Binding Title}" Height="800" Width="1280">
+                     Title="{Binding Title}" Height="800" Width="1280" WindowState="Maximized">
     <mahapps:TransitioningContentControl Content="{Binding CurrentView}" />
 </mahapps:MetroWindow>

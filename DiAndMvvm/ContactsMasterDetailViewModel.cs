@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DiAndMvvm
 {
 
-    public sealed class ContactsMasterDetailViewModel
+    public sealed class ContactsMasterDetailViewModel : BaseNotifyPropertyChanged
     {
     }
 }
